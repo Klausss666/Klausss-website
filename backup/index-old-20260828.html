@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klaus · 个人主页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px 50px;
+            border-radius: 24px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 40px;
+        }
+        .nav-left { font-size: 1.5rem; font-weight: 500; }
+        .nav-left a { text-decoration: none; color: #000; }
+        .nav-right a {
+            margin-left: 24px;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.95rem;
+        }
+        .nav-right .github-btn {
+            background: #000;
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        .hero { margin-bottom: 48px; }
+        .hero h1 { font-size: 3.8rem; font-weight: 500; letter-spacing: -0.02em; color: #000; }
+        .hero .subhead { font-size: 1.2rem; color: #555; margin-top: 6px; }
+        .tag-group { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag { background: #f1f1f1; padding: 6px 18px; border-radius: 30px; font-size: 0.9rem; color: #111; }
+        .social-links { margin-top: 24px; display: flex; gap: 18px; }
+        .social-links a { color: #333; font-size: 1.4rem; }
+        .section-title { font-size: 2rem; font-weight: 400; margin: 48px 0 24px 0; padding-bottom: 12px; border-bottom: 1px solid #eaeaea; color: #000; }
+        .profile-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; margin-bottom: 20px; }
+        .profile-left .avatar-placeholder { background: #f5f5f5; border-radius: 20px; padding: 20px; text-align: center; border: 1px solid #eee; }
+        .profile-left .avatar-placeholder i { font-size: 3rem; color: #aaa; display: block; margin-bottom: 8px; }
+        .profile-right p { margin-bottom: 12px; color: #222; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 10px 0; }
+        .skill-tag { background: #f1f1f1; padding: 2px 14px; border-radius: 20px; font-size: 0.9rem; }
+        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 10px; }
+        .project-card { background: #fafafa; border-radius: 16px; padding: 24px; border: 1px solid #f0f0f0; }
+        .project-card h4 { font-size: 1.2rem; font-weight: 500; margin-bottom: 4px; }
+        .project-card .meta { font-size: 0.9rem; color: #777; margin-bottom: 10px; }
+        .project-card ul { list-style: none; padding: 0; }
+        .project-card ul li { position: relative; padding-left: 18px; margin-bottom: 6px; font-size: 0.95rem; color: #333; }
+        .project-card ul li::before { content: "▹"; position: absolute; left: 0; color: #888; }
+        @media (max-width: 800px) {
+            .container { padding: 20px; }
+            .profile-grid { grid-template-columns: 1fr; }
+            .project-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.8rem; }
+            .nav-right { display: none; }
+        }
+        .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; font-size: 0.9rem; color: #aaa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="nav-left"><a href="#">Klaus</a></div>
+            <div class="nav-right">
+                <a href="#">首页</a>
+                <a href="#">项目</a>
+                <a href="#">关于</a>
+                <a href="#" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+
+        <div id="app"></div>
+
+        <div class="footer">© 2026 Klaus · 用 AI 构建 · 内容在内部数据中修改</div>
+    </div>
+
+    <script>
+        // ============================================================
+        // 所有数据都写在这里，修改内容只需要改下面这个 data 对象
+        // ============================================================
+        const data = {
+            hero: {
+                name: "Klaus 高炜轩",
+                subtitle: "法学硕士 · 未来的商业化专家 · 英语专八 · 雅思7.5",
+                tags: ["法律思维", "商务沟通", "AI工具", "合同审查", "跨文化"]
+            },
+            social: [
+                { icon: "fab fa-bilibili", url: "#" },
+                { icon: "fab fa-youtube", url: "#" },
+                { icon: "fas fa-envelope", url: "#" },
+                { icon: "fab fa-weixin", url: "#" },
+                { icon: "fab fa-github", url: "#" }
+            ],
+            profile: {
+                content: `23岁，浙江温州人，浙江大学光华法学院硕士在读（2025级），本科毕业于浙江工业大学英语专业（辅修法学）。英语专业八级，CET-6 603分，雅思 7.5，具备扎实的英语听说读写译能力，可作为工作语言进行流畅商务沟通与书面往来。兼具法律与英语双重学科背景，逻辑严谨，擅长合同审查、风险预判与跨文化沟通。曾在律所、法院实习，熟悉合同审核流程与文书撰写，具备优秀的细节把控与问题解决能力。期待在外贸或商业化岗位上，运用语言优势与法律素养，开拓国际市场、维护客户关系、推动业务高效落地。有韧性、能坚持、长期主义。`
+            },
+            skills: {
+                tags: ["英语专八", "雅思7.5", "法律文书", "合同审查", "AI大模型", "VS Code", "Claude Code", "Office三件套"]
+            },
+            projects: [
+                {
+                    title: "北京金诚同达（杭州）律师事务所 · 金融团队",
+                    period: "2024.12 – 2025.06",
+                    role: "实习生",
+                    details: [
+                        "深度参与客户会议，精准记录核心诉求，协助完成尽职调查报告，通过高效沟通建立客户信任，将法律分析转化为可落地的风险应对策略。",
+                        "独立审查多份金融合同及法律文件，精准识别关键条款中的潜在风险，输出修改意见。这一过程与销售策略中的「痛点挖掘—方案匹配」逻辑高度相通。",
+                        "整理、翻译英文法律文件，积累跨境业务中的合规与风控经验，强化跨文化商业协调能力。"
+                    ]
+                },
+                {
+                    title: "杭州市中级人民法院 · 法官助理",
+                    period: "2026.04 – 2026.07",
+                    role: "法官助理",
+                    details: [
+                        "独立撰写、修改 50 余份民商事判决书，深入理解司法裁判逻辑与法律适用规则，培养严谨的文字表达与逻辑推理能力。",
+                        "梳理大量卷宗与证据材料，建立清晰的档案索引与摘要，提高团队信息检索与办案效率。",
+                        "通过接触各类商事纠纷案件，强化了对合同履行、违约责任、国际贸易惯例等领域的实务认知。"
+                    ]
+                },
+                {
+                    title: "杭州亚运会 · 礼宾接待部志愿者",
+                    period: "2023.09 – 2023.10",
+                    role: "外宾接待",
+                    details: [
+                        "接待日本队等国际队伍及各国领导层贵宾，提供英文讲解与服务，展现跨文化沟通与应变能力。"
+                    ]
+                },
+                {
+                    title: "校内英语演讲俱乐部 · 负责人",
+                    period: "2022.09 – 2024.06",
+                    role: "组织者",
+                    details: [
+                        "定期组织英语角、辩论赛等活动，提升口语表达与公众演讲能力，锻炼团队组织与活动策划能力。"
+                    ]
+                }
+            ]
+        };
+
+        // ============================================================
+        // 渲染逻辑（这部分不用改）
+        // ============================================================
+        function render() {
+            let html = '';
+
+            // Hero
+            html += `
+                <div class="hero">
+                    <h1>${data.hero.name}</h1>
+                    <div class="subhead">${data.hero.subtitle}</div>
+                    <div class="tag-group">
+                        ${data.hero.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                    <div class="social-links">
+                        ${data.social.map(s => `<a href="${s.url}" target="_blank"><i class="${s.icon}"></i></a>`).join('')}
+                    </div>
+                </div>
+            `;
+
+            // 个人简介
+            html += `<div class="section-title">个人简介</div>`;
+            html += `<div class="profile-grid">`;
+            html += `
+                <div class="profile-left">
+                    <div class="avatar-placeholder">
+                        <i class="fas fa-user-circle"></i>
+                        高炜轩<br><span style="font-size:0.8rem;color:#999;">浙江大学 · 法学硕士</span>
+                    </div>
+                </div>
+            `;
+            html += `<div class="profile-right"><p>${data.profile.content.replace(/\n/g, '<br>')}</p>`;
+            html += `<div class="skill-tags">${data.skills.tags.map(t => `<span class="skill-tag">${t}</span>`).join('')}</div>`;
+            html += `</div></div>`;
+
+            // 项目经历
+            html += `<div class="section-title">项目经历</div>`;
+            html += `<div class="project-grid">`;
+            data.projects.forEach(proj => {
+                html += `
+                    <div class="project-card">
+                        <h4>${proj.title}</h4>
+                        <div class="meta">${proj.period} · ${proj.role}</div>
+                        <ul>${proj.details.map(d => `<li>${d}</li>`).join('')}</ul>
+                    </div>
+                `;
+            });
+            html += `</div>`;
+
+            document.getElementById('app').innerHTML = html;
+        }
+
+        render();
+    </script>
+</body>
+</html>

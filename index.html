@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f4ee">
+    <title>GAO WEIXUAN Klaus — Personal Archive</title>
+    <meta name="description" content="高炜轩（Klaus Gao）的个人网站 — 法学硕士 · 跨文化商务沟通">
+    <!--
+    ══════════════════════════════════════════════════════════════
+    图片命名对照表（图片放入本目录后自动显示，缺失时显示占位框）
+    avatar.jpg    封面拼贴主图       avatar-s.jpg  封面拼贴小图
+    cover1.jpg / cover2.jpg / cover3.jpg           封面拼贴（新三张）
+    about.jpg     简介形象照原件     about-cutout.png  简介贴图（白底已抠）
+    edu1.jpg      教育板块竖图       edu2.jpg      教育板块横图
+    pro1.jpg      律所实习照         pro1b.jpg     律所工作记录（截图·档案卡）
+    pro2.jpg      中院实习照
+    stu1.jpg      文体部任职记录（截图·档案卡）
+    stu2.jpg      亚运会接待照
+    game/         扭蛋机小游戏（PLAY → 入口）
+    ══════════════════════════════════════════════════════════════
+    字体：全部走 npmmirror 镜像（fontsource），国内（微信内）可正常加载
+    Playfair Display / Italiana / Noto Serif SC / Noto Sans SC / Inter
+    + LXGW WenKai 楷体（用于引用等装饰）
+    若镜像不可用，自动回退系统宋体/楷体/黑体，不影响阅读。
+    ══════════════════════════════════════════════════════════════
+    -->
+    <link rel="preconnect" href="https://registry.npmmirror.com" crossorigin>
+    <link href="https://registry.npmmirror.com/@fontsource/playfair-display/latest/files/500.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/@fontsource/playfair-display/latest/files/700.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/@fontsource/playfair-display/latest/files/900.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/@fontsource/playfair-display/latest/files/500-italic.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/@fontsource/playfair-display/latest/files/700-italic.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/@fontsource/italiana/latest/files/index.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/@fontsource/noto-serif-sc/latest/files/600.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/@fontsource/noto-serif-sc/latest/files/700.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/@fontsource/noto-serif-sc/latest/files/900.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/@fontsource/noto-sans-sc/latest/files/400.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/@fontsource/noto-sans-sc/latest/files/500.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/@fontsource/noto-sans-sc/latest/files/700.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/@fontsource/inter/latest/files/400.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/@fontsource/inter/latest/files/500.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/lxgw-wenkai-webfont/1.7.0/files/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ═══════════ 左上角 · 语言切换 ═══════════ -->
+    <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn is-active" data-lang="zh" type="button">中文</button>
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+    </div>
+
+    <!-- ═══════════ 左侧 · 垂直目录 ═══════════ -->
+    <nav class="rail" aria-label="目录">
+        <div class="rail-brand"><b>GW</b><span>KLAUS GAO<br>EST. 2026</span></div>
+        <div class="rail-list">
+            <a class="rail-item is-active" href="#home" data-target="home">
+                <span class="rail-num">01</span><span class="rail-label" data-i18n="nav.home">封面</span>
+            </a>
+            <a class="rail-item" href="#about" data-target="about">
+                <span class="rail-num">02</span><span class="rail-label" data-i18n="nav.about">简介</span>
+            </a>
+            <a class="rail-item" href="#education" data-target="education">
+                <span class="rail-num">03</span><span class="rail-label" data-i18n="nav.edu">教育</span>
+            </a>
+            <a class="rail-item" href="#experience" data-target="experience">
+                <span class="rail-num">04</span><span class="rail-label" data-i18n="nav.exp">实习</span>
+            </a>
+            <a class="rail-item" href="#leadership" data-target="leadership">
+                <span class="rail-num">05</span><span class="rail-label" data-i18n="nav.lead">学生工作</span>
+            </a>
+            <a class="rail-item" href="#skills" data-target="skills">
+                <span class="rail-num">06</span><span class="rail-label" data-i18n="nav.skills">技能</span>
+            </a>
+            <a class="rail-item" href="#contact" data-target="contact">
+                <span class="rail-num">07</span><span class="rail-label" data-i18n="nav.contact">联系</span>
+            </a>
+        </div>
+        <p class="rail-foot">© 2026<br>PORTFOLIO</p>
+    </nav>
+
+    <main id="main">
+
+        <!-- ═══════════ 01 · 封面（初始锁定态 · 拼贴 + 滚动旋转） ═══════════ -->
+        <section id="home" class="section section--cover">
+            <div class="wrap cover" id="coverStage">
+                <div class="cover-text">
+                    <p class="cover-hi" data-i18n="cover.hi">HI，我是高炜轩</p>
+                    <h1 class="cover-title"><span>GAO</span><span>WEIXUAN</span><em>Klaus</em></h1>
+                    <p class="cover-stamp">PORTFOLIO · 2026<br>PERSONAL ARCHIVE</p>
+                </div>
+                <div class="cover-collage" aria-hidden="true">
+                    <figure class="cover-shot cs-1" style="--tilt:-4deg; --par:-22%; --dx:10px; --dy:6px; --ft:7.5s">
+                        <div class="shot-in"><div class="frame"><img src="cover1.jpg" alt=""></div></div>
+                    </figure>
+                    <figure class="cover-shot cs-2" style="--tilt:-3deg; --par:-14%; --dx:-8px; --dy:9px; --ft:8.5s">
+                        <div class="shot-in"><div class="frame"><img src="avatar-s.jpg" alt=""></div></div>
+                    </figure>
+                    <figure class="cover-shot cs-3" style="--tilt:3deg; --par:-8%; --dx:12px; --dy:-7px; --ft:9s">
+                        <div class="shot-in"><div class="frame"><img src="cover2.jpg" alt=""></div></div>
+                    </figure>
+                    <figure class="cover-shot cs-4" style="--tilt:-2deg; --par:-5%; --dx:-6px; --dy:-8px; --ft:7s">
+                        <div class="shot-in"><div class="frame"><img src="cover3.jpg" alt=""></div></div>
+                    </figure>
+                    <figure class="cover-shot cs-5" style="--tilt:2.5deg; --par:-12%; --dx:-14px; --dy:-10px; --ft:10s">
+                        <div class="shot-in"><div class="frame"><img src="avatar.jpg" alt="高炜轩"></div></div>
+                    </figure>
+                </div>
+            </div>
+            <div class="cover-foot">
+                <p class="cover-hint" id="coverHint" data-i18n="cover.hint">点击左侧目录，开始阅读</p>
+                <p class="cover-no">Nº 01 — COVER · © 2026</p>
+            </div>
+        </section>
+
+        <!-- ═══════════ 02 · 简介（贴图人像 + 关键词气泡交互） ═══════════ -->
+        <section id="about" class="section section--about">
+            <div class="wrap">
+                <header class="sec-head rv">
+                    <p class="sec-over">02 · ABOUT</p>
+                    <div class="sec-title-row">
+                        <h2 class="sec-title" data-i18n="about.title">关于我</h2>
+                        <p class="sec-sub" data-i18n="about.sub">The Profile</p>
+                    </div>
+                </header>
+
+                <div class="about-grid">
+                    <figure class="media media--sticker about-photo rv" style="--tilt:-3deg" data-label="ABOUT-CUTOUT.PNG — 贴图（白底已抠）">
+                        <img src="about-cutout.png" alt="高炜轩 形象照">
+                        <figcaption><span data-i18n="about.caption">形象照 — 高炜轩</span><b>FIG. 02</b></figcaption>
+                    </figure>
+
+                    <div class="about-field rv" style="--d:.12s">
+                        <p class="about-hint" data-i18n="about.hint">悬浮 / 点击关键词查看</p>
+                        <div class="bubbles">
+                            <button class="bubble is-active" data-note="0" type="button"><span data-i18n="about.k1">光华法学院</span></button>
+                            <button class="bubble" data-note="1" type="button"><span data-i18n="about.k2">商务英语</span></button>
+                            <button class="bubble" data-note="2" type="button"><span data-i18n="about.k3">SaaS · 云计算</span></button>
+                            <button class="bubble" data-note="3" type="button"><span data-i18n="about.k4">逻辑思维</span></button>
+                        </div>
+                        <div class="note-card" id="noteCard" aria-live="polite">
+                            <p class="note-no">Nº 01</p>
+                            <h3 class="note-title" id="noteTitle">光华法学院</h3>
+                            <p class="note-body" id="noteBody">浙江大学光华法学院，法学硕士在读；接受系统的法学训练，以法律逻辑拆解问题。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 全宽黑带引用（呼应风格参考图） -->
+            <blockquote class="band rv">
+                <p><span data-i18n="about.quote">「语言，是另一套法律之外的严谨工具。」</span></p>
+                <cite>— GAO WEIXUAN</cite>
+            </blockquote>
+        </section>
+
+        <!-- ═══════════ 03 · 教育背景 ═══════════ -->
+        <section id="education" class="section">
+            <div class="wrap">
+                <header class="sec-head rv">
+                    <p class="sec-over">03 · EDUCATION</p>
+                    <div class="sec-title-row">
+                        <h2 class="sec-title" data-i18n="edu.title">教育背景</h2>
+                        <p class="sec-sub" data-i18n="edu.sub">Education</p>
+                    </div>
+                </header>
+
+                <div class="edu-wrap">
+                    <div class="edu-list">
+                        <article class="edu rv">
+                            <p class="edu-years" data-i18n="edu1.years">2025.09 — 至今</p>
+                            <div class="edu-main">
+                                <h3 class="edu-school" data-i18n="edu1.school">浙江大学 光华法学院</h3>
+                                <p class="edu-en" data-i18n="edu1.en">Guanghua Law School · Zhejiang University</p>
+                                <p class="edu-meta" data-i18n="edu1.meta">法学硕士（在读）</p>
+                            </div>
+                        </article>
+                        <article class="edu rv" style="--d:.08s">
+                            <p class="edu-years" data-i18n="edu2.years">2021.09 — 2025.06</p>
+                            <div class="edu-main">
+                                <h3 class="edu-school" data-i18n="edu2.school">浙江工业大学 外国语学院</h3>
+                                <p class="edu-en" data-i18n="edu2.en">School of Foreign Languages · Zhejiang University of Technology</p>
+                                <p class="edu-meta" data-i18n="edu2.meta">本科 · 英语专业（辅修法学）</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="edu-media rv" style="--d:.12s">
+                        <div class="media-stack">
+                            <figure class="media media--main" style="--tilt:1.2deg" data-label="EDU1.JPG — 校园档案">
+                                <img src="edu1.jpg" alt="教育背景">
+                                <figcaption><span data-i18n="edu.fig">校园档案</span><b>FIG. 03</b></figcaption>
+                            </figure>
+                            <figure class="media media--sub media--land" style="--tilt:-1.6deg" data-label="EDU2.JPG — 校园档案">
+                                <img src="edu2.jpg" alt="教育背景 补充">
+                                <figcaption><span data-i18n="edu.fig">校园档案</span><b>FIG. 04</b></figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="honors rv">
+                    <span class="honors-label">荣誉 · HONORS</span>
+                    <span class="honors-text" data-i18n="edu.honors">「21世纪杯」全国中学生英语演讲比赛一等奖 · 赛学杯全国中学生英语写作大赛一等奖 · 英语专业四级（TEM-4）· 英语专业八级（TEM-8）</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- ═══════════ 04 · 实习经历 ═══════════ -->
+        <section id="experience" class="section">
+            <div class="wrap">
+                <header class="sec-head rv">
+                    <p class="sec-over">04 · EXPERIENCE</p>
+                    <div class="sec-title-row">
+                        <h2 class="sec-title" data-i18n="exp.title">实习经历</h2>
+                        <p class="sec-sub" data-i18n="exp.sub">Experience</p>
+                    </div>
+                </header>
+
+                <div class="cases">
+                    <!-- 案例 1 · 律所（图左文右 + 档案卡） -->
+                    <article class="case rv" style="--n:'01'">
+                        <div class="case-media">
+                            <div class="media-stack">
+                                <figure class="media media--main" style="--tilt:-1.2deg" data-label="PRO1.JPG — 律所实习照">
+                                    <img src="pro1.jpg" alt="北京金诚同达（杭州）律师事务所实习">
+                                    <figcaption><span data-i18n="exp1.cap">金诚同达 · 实习留影</span><b>FIG. 05</b></figcaption>
+                                </figure>
+                                <a class="media media--sub archive" href="pro1b.jpg" target="_blank" rel="noopener" data-label="PRO1B.JPG — 工作记录 · 点击查看原图">
+                                    <img src="pro1b.jpg" alt="律所工作记录">
+                                    <figcaption><span data-i18n="exp1.cap2">工作记录</span><b>ARCHIVE ↗</b></figcaption>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-tag">LAW FIRM · <span data-i18n="exp1.tag">金融团队</span></p>
+                            <h3 class="case-title" data-i18n="exp1.title">北京金诚同达（杭州）律师事务所</h3>
+                            <p class="case-role" data-i18n="exp1.role">实习生 · 2024.12 — 2025.06</p>
+                            <p class="case-copy" data-i18n="exp1.copy">在金融团队实习期间，深度参与客户会议与尽职调查，协助律师完成合同审查、风险分析与法律检索，处理涉外法律文书与英文邮件往来，并整理尽调底稿、跟进项目文件。在真实商业纠纷的现场，练习把法律分析转译为客户听得懂的风险策略——这同样是销售与谈判的核心语言。</p>
+                        </div>
+                    </article>
+
+                    <!-- 案例 2 · 中院（文左图右） -->
+                    <article class="case case--rev rv" style="--n:'02'">
+                        <div class="case-media case-media--solo">
+                            <figure class="media" style="--tilt:1.4deg" data-label="PRO2.JPG — 中院实习照">
+                                <img src="pro2.jpg" alt="杭州市中级人民法院实习">
+                                <figcaption><span data-i18n="exp2.cap">杭州市中级人民法院 · 实习留影</span><b>FIG. 06</b></figcaption>
+                            </figure>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-tag">COURT · <span data-i18n="exp2.tag">民商事审判</span></p>
+                            <h3 class="case-title" data-i18n="exp2.title">杭州市中级人民法院</h3>
+                            <p class="case-role" data-i18n="exp2.role">法官助理（实习）· 2026.04 — 2026.07</p>
+                            <p class="case-copy" data-i18n="exp2.copy">独立撰写、修改 50 余份民商事判决书，系统梳理案件卷宗，建立证据索引；协助法官完成庭审记录、类案检索与文书校对，熟悉从立案到裁判的完整流程。在裁判文书的字句之间，获得对商事纠纷解决机制最直接的实务认知。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ 05 · 学生工作 ═══════════ -->
+        <section id="leadership" class="section">
+            <div class="wrap">
+                <header class="sec-head rv">
+                    <p class="sec-over">05 · LEADERSHIP</p>
+                    <div class="sec-title-row">
+                        <h2 class="sec-title" data-i18n="lead.title">学生工作</h2>
+                        <p class="sec-sub" data-i18n="lead.sub">Leadership</p>
+                    </div>
+                </header>
+
+                <div class="cases">
+                    <!-- 案例 1 · 文体部（纯文字 + 任职记录档案卡） -->
+                    <article class="case case--slim rv" style="--n:'01'">
+                        <div class="case-body">
+                            <p class="case-tag">ZJU · <span data-i18n="lead1.tag">文体部</span></p>
+                            <h3 class="case-title" data-i18n="lead1.title">浙江大学光华法学院 · 研究生文体部部长</h3>
+                            <p class="case-role" data-i18n="lead1.role">部长 · 2025.09 — 至今</p>
+                            <p class="case-copy" data-i18n="lead1.copy">统筹学院文体活动，负责与商家谈判对接、预算控制与团队分工，策划并落地多场院级赛事与演出——把每一场活动当作一次小型的商业项目来管理，在资源有限的情况下保证执行质量。</p>
+                        </div>
+                        <a class="media archive-card" href="stu1.jpg" target="_blank" rel="noopener" data-label="STU1.JPG — 任职记录 · 点击查看原图">
+                            <img src="stu1.jpg" alt="文体部部长任职记录">
+                            <figcaption><span data-i18n="lead1.cap">任职记录</span><b>ARCHIVE ↗</b></figcaption>
+                        </a>
+                    </article>
+
+                    <!-- 案例 2 · 演讲俱乐部（无图 · 纯文字） -->
+                    <article class="case case--quote rv" style="--n:'02'">
+                        <div class="case-body">
+                            <p class="case-tag">ZJUT · <span data-i18n="lead2.tag">演讲俱乐部</span></p>
+                            <h3 class="case-title" data-i18n="lead2.title">浙江工业大学 · 演讲俱乐部负责人</h3>
+                            <p class="case-role" data-i18n="lead2.role">负责人 · 2022.09 — 2024.06</p>
+                            <p class="case-copy" data-i18n="lead2.copy">组织英语角与辩论赛，制定活动选题与培训计划，训练成员的公众表达与说服能力；担任多场活动的主持人，把控现场节奏。语言不只是工具，更是影响力本身。</p>
+                        </div>
+                    </article>
+
+                    <!-- 案例 3 · 亚运会（宽幅图） -->
+                    <article class="case case--rev rv" style="--n:'03'">
+                        <div class="case-media case-media--wide">
+                            <figure class="media media--wide" style="--tilt:-1deg" data-label="STU2.JPG — 亚运会礼宾接待">
+                                <img src="stu2.jpg" alt="杭州亚运会礼宾接待">
+                                <figcaption><span data-i18n="lead3.cap">杭州亚运会 · 礼宾接待留影</span><b>FIG. 07</b></figcaption>
+                            </figure>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-tag">ASIAN GAMES · <span data-i18n="lead3.tag">礼宾接待</span></p>
+                            <h3 class="case-title" data-i18n="lead3.title">杭州亚运会 · 礼宾接待</h3>
+                            <p class="case-role" data-i18n="lead3.role">志愿者 · 2023.09 — 2023.10</p>
+                            <p class="case-copy" data-i18n="lead3.copy">在杭州亚运会期间承担礼宾接待工作，接待日本代表队及各国贵宾，全程英文讲解；负责行程协调与突发情况应对，在跨文化场景中完成沟通、协调与应变。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ 06 · 技能与兴趣（气泡交互） ═══════════ -->
+        <section id="skills" class="section">
+            <div class="wrap">
+                <header class="sec-head rv">
+                    <p class="sec-over">06 · SKILLS</p>
+                    <div class="sec-title-row">
+                        <h2 class="sec-title" data-i18n="skills.title">技能与兴趣</h2>
+                        <p class="sec-sub" data-i18n="skills.sub">Skills &amp; Interests</p>
+                    </div>
+                </header>
+
+                <div class="skill-stage rv">
+                    <p class="about-hint" data-i18n="skills.hint">悬浮 / 点击查看</p>
+                    <div class="skill-bubbles">
+                        <button class="s-bubble is-active" data-snote="0" style="--tilt:-1.2deg" type="button"><span data-i18n="sk1.name">AI 工具</span></button>
+                        <button class="s-bubble" data-snote="1" style="--tilt:1.6deg" type="button"><span data-i18n="sk2.name">英语</span></button>
+                        <button class="s-bubble" data-snote="2" style="--tilt:-1.8deg" type="button"><span data-i18n="sk3.name">Office</span></button>
+                        <button class="s-bubble" data-snote="3" style="--tilt:1.2deg" type="button"><span data-i18n="sk4.name">法律</span></button>
+                        <button class="s-bubble s-bubble--play" data-snote="4" style="--tilt:-1deg" type="button"><span data-i18n="sk5.name">作品</span><b class="s-play">▶</b></button>
+                        <button class="s-bubble" data-snote="5" style="--tilt:1.8deg" type="button"><span data-i18n="sk6.name">兴趣</span></button>
+                    </div>
+                    <div class="note-card skill-note" id="skillNote" aria-live="polite">
+                        <p class="note-no">Nº 01</p>
+                        <h3 class="note-title" id="skillNoteTitle">AI 工具</h3>
+                        <p class="note-body" id="skillNoteBody">熟练使用 Claude Code、ChatGPT 等大模型；可用 VSCode 独立搭建个人网站与小游戏（本站即为一例）</p>
+                        <p class="skill-note-actions"><a class="btn-play" id="skillPlay" href="game/index.html" target="_blank" rel="noopener" hidden>PLAY →</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ 07 · 联系方式 ═══════════ -->
+        <section id="contact" class="section section--contact">
+            <div class="wrap">
+                <header class="sec-head rv">
+                    <p class="sec-over">07 · CONTACT</p>
+                    <div class="sec-title-row">
+                        <h2 class="sec-title" data-i18n="contact.title">联系方式</h2>
+                        <p class="sec-sub" data-i18n="contact.sub">Say Hello</p>
+                    </div>
+                </header>
+
+                <div class="contact-body rv">
+                    <p class="contact-lead" data-i18n="contact.lead">有合作机会或任何想法，欢迎来信</p>
+                    <p class="contact-mail"><a href="mailto:18312930088@163.com">18312930088@163.com</a></p>
+                    <div class="contact-row">
+                        <a class="btn-mail" href="mailto:18312930088@163.com"><span data-i18n="contact.btn">发邮件</span> →</a>
+                        <span class="contact-stamp"><i></i>OPEN TO WORK · <span data-i18n="contact.avail">随时到岗</span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ 页脚 ═══════════ -->
+        <footer class="footer">
+            <p>© 2026 GAO WEIXUAN KLAUS</p>
+            <p data-i18n="footer.note">本页以 HTML · CSS · JS 手工排版</p>
+            <a href="#home" data-target="home" class="to-top" data-i18n="footer.top">↑ 回到封面</a>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# 抠像中间产物 / 未使用的抠像尝试（本地保留，不进仓库）
+*.raw
+*.raw.txt
+avatar-cutout.png
+cover2-cutout.png
